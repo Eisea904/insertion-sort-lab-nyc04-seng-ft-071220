@@ -1,5 +1,8 @@
+let array = [2, 5, 7, 8, 6, 3, 1]
+
+
 function findMinAndRemove(array){
-    let minValue = 0
+    let minValue = array[0]
     let minIndex = 0
     for (i = 0; i < array.length; i++) {
         if (array[i] < minValue) {
@@ -7,18 +10,18 @@ function findMinAndRemove(array){
             minIndex = i
         }
     }
-    array.splice(minIndex)
-    return currentMin
+    array.splice(minIndex, 1)
+    return minValue
 }
 
 function selectionSort(array){
-    let arrayCopy = array   // nondestructive, preserve original array
-    let sortedArray = []
-    let currentMin
+    let sorted = []
+    let newMin
     while (array.length !=0) {
-        currentMin = findMinAndRemove(arrayCopy)
-        sortedArray.push(currentMin)
+        newMin = findMinAndRemove(array)
+        sorted.push(newMin)
     }
-    return sortedArray
+    console.log(sorted)
 }
 
+selectionSort(array)
