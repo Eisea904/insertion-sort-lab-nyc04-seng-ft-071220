@@ -21,7 +21,7 @@ function selectionSort(array){
         newMin = findMinAndRemove(array)
         sorted.push(newMin)
     }
-    console.log(sorted)
+    return(sorted)
 }
 
 selectionSort(array)
